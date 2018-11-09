@@ -12,17 +12,18 @@ describe('`Array.from` converts an array-like object or list into an Array', () 
   });
   
   it('a DOM node`s classList object can be converted', function() {
-    document.body.classList.add('some');
-    document.body.classList.add('other');
-    const classList = Array.from(document.body.classList);
+    const domNode = document.createElement('span');
+    domNode.classList.add('some');
+    domNode.classList.add('other');
+    const classList = Array.from(domNode.classList);
     assert.equal(''+classList, ''+['some', 'other']);
   });
   
   it('convert a NodeList to an Array and `filter()` works on it', function() {
-    const nodeList = Array.from(document.querySelectorAll('body'));
-    const bodies = nodeList.filter((node) => node === document.body);
-    
-    assert.deepEqual(bodies, [document.body]);
+    const nodeList = Array.from(document.createElement('span'));
+    const divs = nodeList.filter((node) => node.tagName === 'div');
+
+    assert.deepEqual(divs.length, 0);
   });
   
   describe('custom conversion using a map function as second param', () => {

@@ -1,0 +1,22 @@
+{
+  "name": "es6katas_estela",
+  "version": "1.0.0",
+  "description": "my js6 katas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha {**,**/**}/*-estela-*.js --require=mocha-require.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divae/es6katas-1.git"
+  },
+  "author": "Estela Medrano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divae/es6katas-1/issues"
+  },
+  "homepage": "https://github.com/divae/es6katas-1#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
